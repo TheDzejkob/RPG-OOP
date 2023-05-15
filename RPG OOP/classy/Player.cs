@@ -17,7 +17,11 @@ namespace RPG_OOP.classy
 
         public double Multiplier { get; set; }
 
-        public Player(string name, int hp, int dmg, bool friendly, int stepcounter, double multiplier)
+        public List<string> Items =new List<string>();
+
+        public int Coiny { get; set; }
+
+        public Player(string name, int hp, int dmg, bool friendly, int stepcounter, double multiplier, List<string> items, int coiny)
         {
             Name = name;
             Hp = hp;
@@ -25,6 +29,8 @@ namespace RPG_OOP.classy
             Friendly = friendly;
             Stepcounter = stepcounter;
             Multiplier = multiplier;
+            Items = items;
+            Coiny = coiny;
         }
 
     }

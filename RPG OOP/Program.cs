@@ -38,9 +38,9 @@ namespace RPG_OOP
 
             Console.WriteLine("-----------------");
 
-            Player player = new Player(meno, 20, 2, true, 0 ,1.5);
+            Player player = new Player(meno, 20, 2, true, 0, 1.5,new List<string>(),0);
 
-            zacatek:
+        zacatek:
 
             string input = "";
 
@@ -58,6 +58,14 @@ namespace RPG_OOP
                     Console.ReadLine();
                     break;
                 }
+
+                if (input == "help" || input == "prikazy")
+                {
+                    Console.WriteLine("Všechny použitelné příkazy");
+                    Console.WriteLine("exit  příkaz pro opuštění programu");
+
+                }
+
 
                 if (comb == true)
                 {
@@ -98,7 +106,7 @@ namespace RPG_OOP
                 else if (iD == 1.01)
                 {
 
-                    Entity krysa = new Entity("Krysa",5,1,false);
+                    Entity krysa = new Entity("Krysa",3,1,false,5);
                     Console.WriteLine("-----------------");
                     enemy = krysa;
                     while (enemy.Hp > 0) 
@@ -113,6 +121,9 @@ namespace RPG_OOP
                         heavy = true;
                         kro = true;
                         utek = true;
+                        int vysledek = player.Coiny + enemy.Reward;
+                        player.Coiny = vysledek;
+
                         
                     }
 
@@ -120,7 +131,7 @@ namespace RPG_OOP
                 else if (iD == 1.02) 
                 {
 
-                    Entity Vlk = new Entity("Vlk", 8, 3, false);
+                    Entity Vlk = new Entity("Vlk", 6, 3, false,8);
                     Console.WriteLine("-----------------");
                     enemy = Vlk;
                     while (enemy.Hp > 0)
@@ -134,6 +145,9 @@ namespace RPG_OOP
                     {
                         heavy = true;
                         kro = true;
+                        utek = true;
+                        int vysledek = player.Coiny + enemy.Reward;
+                        player.Coiny = vysledek;
 
 
                     }

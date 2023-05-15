@@ -14,12 +14,15 @@ namespace RPG_OOP.classy
        public int Dmg { get; set; }
        public bool Friendly { get; set; }
 
-        public Entity(string name, int hp, int dmg, bool friendly) 
+        public int Reward { get; set; }
+
+        public Entity(string name, int hp, int dmg, bool friendly, int reward)
         {
             Name = name;
             Hp = hp;
             Dmg = dmg;
             Friendly = friendly;
+            Reward = reward;
         }
 
     }
