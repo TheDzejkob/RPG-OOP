@@ -37,7 +37,7 @@ namespace RPG_OOP
             }
 
 
-            Console.WriteLine("-----------------");
+            Console.WriteLine("------------------");
 
             Player player = new Player(meno, 20, 2, true, 0 ,1.5);
 
