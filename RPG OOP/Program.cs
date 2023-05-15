@@ -38,7 +38,7 @@ namespace RPG_OOP
 
             Console.WriteLine("-----------------");
 
-            Player player = new Player(meno, 20, 2, true, 0, 1.5,new List<string>(),0);
+            Player player = new Player(meno, 20, 2, true, 0, 1.5,new List<Item>(),0);
 
         zacatek:
 
@@ -47,7 +47,11 @@ namespace RPG_OOP
             while (input == "" || comb == false)
             {
                 input = Console.ReadLine();
+                if (input == "") 
+                {
                 krok();
+                }
+
                 if (player.Hp <= 0 || input == "exit")
                 {
                     Console.WriteLine("zemřel jsi");
@@ -61,8 +65,34 @@ namespace RPG_OOP
 
                 if (input == "help" || input == "prikazy")
                 {
+                    
                     Console.WriteLine("Všechny použitelné příkazy");
+                    Console.WriteLine("--------------------------");
                     Console.WriteLine("exit  příkaz pro opuštění programu");
+                    Console.WriteLine();
+                    Console.ReadLine();
+
+                }
+
+                if (input == "postava")
+                {
+                    Console.Clear();
+                    Console.WriteLine("Tvá postava");
+                    Console.WriteLine("-----------");
+                    Console.WriteLine("Jméno: " + player.Name);
+                    Console.WriteLine("Životy: " + player.Hp);
+                    Console.WriteLine("Počet kroků: " + player.Stepcounter);
+                    Console.WriteLine("Coiny: " + player.Coiny);
+                    if (player.Items.Count == 0) 
+                    {
+                        Console.WriteLine("Tvůj inventář: " + "Tvůj Inventář je prázdný");
+                    }
+                    else
+                    {
+                    Console.WriteLine("Tvůj inventář: " + player.Items);
+                    }
+
+                    Console.ReadLine();
 
                 }
 
@@ -243,10 +273,6 @@ namespace RPG_OOP
 
                 }
 
-
-
-
-
         }
 
         void enemyAtt()
@@ -264,6 +290,42 @@ namespace RPG_OOP
                 goto zacatek;
             }
 
+            void trade()
+            {
+                Console.WriteLine("--Itemy nabýzené traderem--");
+                Console.WriteLine("1 pro zakoupení topůrka za 5 Coinů");
+                Console.WriteLine("2 pro zakoupení čepele sekery za 3 Coiny");
+                Console.WriteLine("3 pro zakoupení obvazu za 10 Coinů");
+                Console.WriteLine("4 pro odchod");
+
+                string tradeRoz = Console.ReadLine();
+
+                if (tradeRoz == "1" && player.Coiny >= 5)
+                {
+                    Item topurko = new Item("Topůrko", 0, 0, true, 4,0);
+                    player.Items.Add(topurko);
+                    Console.WriteLine("Zakoupil jsi topůrko za 5 coinů, bylo ti přidáno do Inventáře");
+
+
+                }
+
+                if (tradeRoz == "2" && player.Coiny >= 3)
+                {
+                    Item cepel = new Item("Čepel sekery", 0, 0, true, 2,0);
+                    player.Items.Add(cepel);
+                    Console.WriteLine("Zakoupil jsi čepel sekery za 3 coiny, byla ti přidáno do Inventáře");
+
+                }
+
+                if (tradeRoz == "3" && player.Coiny >= 10)
+                {
+                    Item obvaz = new Item("Obvaz", 0, 0, false, 0, 10);
+                    player.Items.Add(obvaz);
+                    Console.WriteLine("Zakoupil jsi obvaz za 10 Coinů, byl ti přidán do Inventáře ");
+
+                }
+
+            }
 
         }
     }

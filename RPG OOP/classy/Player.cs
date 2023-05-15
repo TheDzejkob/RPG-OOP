@@ -17,11 +17,11 @@ namespace RPG_OOP.classy
 
         public double Multiplier { get; set; }
 
-        public List<string> Items =new List<string>();
+        public List<Item> Items =new List<Item>();
 
         public int Coiny { get; set; }
 
-        public Player(string name, int hp, int dmg, bool friendly, int stepcounter, double multiplier, List<string> items, int coiny)
+        public Player(string name, int hp, int dmg, bool friendly, int stepcounter, double multiplier, List<Item> items, int coiny)
         {
             Name = name;
             Hp = hp;

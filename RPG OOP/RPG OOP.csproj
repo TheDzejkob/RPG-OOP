@@ -45,9 +45,8 @@
   <ItemGroup>
     <Compile Include="classy\Buff.cs" />
     <Compile Include="classy\Entity.cs" />
+    <Compile Include="classy\Item.cs" />
     <Compile Include="classy\Player.cs" />
-    <Compile Include="classy\Event.cs" />
-    <Compile Include="classy\Scene.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
