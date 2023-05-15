@@ -39,6 +39,7 @@ namespace RPG_OOP
             Console.WriteLine("-----------------");
 
             Player player = new Player(meno, 20, 2, true, 0, 1.5,new List<Item>(),0);
+            
 
         zacatek:
 
@@ -52,6 +53,7 @@ namespace RPG_OOP
                 krok();
                 }
 
+
                 if (player.Hp <= 0 || input == "exit")
                 {
                     Console.WriteLine("zemřel jsi");
@@ -63,13 +65,14 @@ namespace RPG_OOP
                     break;
                 }
 
-                if (input == "help" || input == "prikazy")
+                if (input == "help")
                 {
                     
                     Console.WriteLine("Všechny použitelné příkazy");
                     Console.WriteLine("--------------------------");
                     Console.WriteLine("exit  příkaz pro opuštění programu");
-                    Console.WriteLine();
+                    Console.WriteLine("help pro zobrazeni tohoto menu");
+                    Console.WriteLine("postava pro výpis atributů a inventáře tvé postavy");
                     Console.ReadLine();
 
                 }
@@ -89,7 +92,12 @@ namespace RPG_OOP
                     }
                     else
                     {
-                    Console.WriteLine("Tvůj inventář: " + player.Items);
+                    Console.WriteLine("-Tvůj inventář-");
+                    Console.WriteLine("       ↓      ");
+                        for(int i = 0; i < player.Items.Count; i++)
+{
+                            Console.WriteLine(player.Items[i].Name);
+                        }
                     }
 
                     Console.ReadLine();
@@ -184,9 +192,33 @@ namespace RPG_OOP
 
 
                 }
+                else if (iD == 2.00)
+                {
+                    bool tra = true;
+                    while(tra == true)
+                    {
+                    Console.WriteLine("Chceš začít obchodovat?");
+                    Console.WriteLine("1 Ano, ukaž mi co nabízíš");
+                    Console.WriteLine("2 Ne, momentálně obchodovat nechci");
+                    string trad = Console.ReadLine();
+                    if (trad == "1")
+                    {
+                        trade();
+                        tra = false;
+                    }
+                    else if (trad == "2")
+                    {
+                        tra = false;
+                    }
+                    else 
+                    {
+                        
+                    }
+                    }
+                }
 
                 //Jsou 4h rano a mam v sobe 4ty kafe, miluju svuj zivot xD
-                
+                //o tejden pozdejs a nic se nezmenilo :D
         }
 
 
@@ -308,6 +340,11 @@ namespace RPG_OOP
 
 
                 }
+                if (tradeRoz == "1" && player.Coiny < 5)
+                {
+                    Console.WriteLine("Nemáš dostatek Coinů");
+                }
+
 
                 if (tradeRoz == "2" && player.Coiny >= 3)
                 {
@@ -316,13 +353,22 @@ namespace RPG_OOP
                     Console.WriteLine("Zakoupil jsi čepel sekery za 3 coiny, byla ti přidáno do Inventáře");
 
                 }
+                if (tradeRoz == "2" && player.Coiny < 3)
+                {
+                    Console.WriteLine("Nemáš dostatek Coinů");
+                }
+
 
                 if (tradeRoz == "3" && player.Coiny >= 10)
                 {
-                    Item obvaz = new Item("Obvaz", 0, 0, false, 0, 10);
+                    Item obvaz = new Item("Obvaz", 0, 0, false,0, 10);
                     player.Items.Add(obvaz);
                     Console.WriteLine("Zakoupil jsi obvaz za 10 Coinů, byl ti přidán do Inventáře ");
 
+                }
+                if (tradeRoz == "3" && player.Coiny < 10)
+                {
+                    Console.WriteLine("Nemáš dostatek Coinů");
                 }
 
             }
