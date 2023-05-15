@@ -26,7 +26,6 @@ namespace RPG_OOP
             bool kro = false;
 
             bool utek = true;
-
             
             while (meno == "")
             {
@@ -37,7 +36,7 @@ namespace RPG_OOP
             }
 
 
-            Console.WriteLine("------------------");
+            Console.WriteLine("-----------------");
 
             Player player = new Player(meno, 20, 2, true, 0 ,1.5);
 
@@ -85,7 +84,7 @@ namespace RPG_OOP
                 
                 string selectedLine = lines[randomIndex];
                 string[] parts = selectedLine.Split(';');
-                int iD = int.Parse(parts[0]);
+                double iD = double.Parse(parts[0]);
                 string text = parts[1];
                 player.Stepcounter++;
 
@@ -96,7 +95,7 @@ namespace RPG_OOP
                 {
 
                 }
-                else if (iD == 1)
+                else if (iD == 1.01)
                 {
 
                     Entity krysa = new Entity("Krysa",5,1,false);
@@ -118,7 +117,7 @@ namespace RPG_OOP
                     }
 
                 }
-                else if (iD == 2) 
+                else if (iD == 1.02) 
                 {
 
                     Entity Vlk = new Entity("Vlk", 8, 3, false);
