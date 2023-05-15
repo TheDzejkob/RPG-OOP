@@ -8,3 +8,11 @@
 1,01;Podkal jsi krysu a zaútočila na tebe
 0,00;Pribeh placeholder 7
 0,00;Pribeh placeholder 8
+0,00;Pribeh placeholder 9
+0,00;Pribeh placeholder 10
+0,00;Pribeh placeholder 11
+0,00;Pribeh placeholder 12
+0,00;Pribeh placeholder 13
+0,00;Pribeh placeholder 14
+0,00;Pribeh placeholder 15
+0,00;Pribeh placeholder 16

@@ -106,7 +106,7 @@ namespace RPG_OOP
                 else if (iD == 1.01)
                 {
 
-                    Entity krysa = new Entity("Krysa",3,1,false,5);
+                    Entity krysa = new Entity("Krysa",4,1,false,5);
                     Console.WriteLine("-----------------");
                     enemy = krysa;
                     while (enemy.Hp > 0) 
