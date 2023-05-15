@@ -72,7 +72,7 @@ namespace RPG_OOP
         void krok() 
         {
 
-                string filePath = @"C:\\Users\\PCnetz\\Desktop\\RPG OOP\\negr.txt";
+                string filePath = @"C:\\Users\\PCnetz\\Desktop\\PRG\\RPG-OOP\\negr.txt";
 
                 
                 string[] lines = File.ReadAllLines(filePath);
@@ -91,7 +91,7 @@ namespace RPG_OOP
                 Console.WriteLine(text);
 
 
-                if (iD == 0)
+                if (iD == 0.00)
                 {
 
                 }
