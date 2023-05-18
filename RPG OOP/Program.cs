@@ -391,24 +391,24 @@ namespace RPG_OOP
 
             }
             
-            void crafting()
-            {
-                Console.WriteLine("-crafting-");
-                Console.WriteLine("Craftitelné předměty");
-                Console.WriteLine("          ↓         ");
-                Console.WriteLine("1 Pro sekirku");
-                Console.WriteLine("2 Pro bandaze");
-                string CraftRoz = Console.ReadLine;
+            //void crafting()
+            //{
+            //    Console.WriteLine("-crafting-");
+            //    Console.WriteLine("Craftitelné předměty");
+            //    Console.WriteLine("          ↓         ");
+            //    Console.WriteLine("1 Pro sekirku");
+            //    Console.WriteLine("2 Pro bandaze");
+            //    string CraftRoz = Console.ReadLine();
 
-                if (CraftRoz == "1" && player.Items.Contains(cepel) && player.Items.Contains(topurko))
-                {
-                    player.Items.Remove(topurko, cepel);
-                    Item serika = new Item("Sekirka", 2, 0, true, 10, 0);
-                    player.Items.Add(serika);
-                }
+            //    if (CraftRoz == "1" && player.Items.Contains(cepel) && player.Items.Contains(topurko))
+            //    {
+            //        player.Items.Remove(topurko, cepel);
+            //        Item serika = new Item("Sekirka", 2, 0, true, 10, 0);
+            //        player.Items.Add(serika);
+            //    }
                 
 
-            }
+            //}
 
 
 
