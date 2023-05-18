@@ -104,6 +104,11 @@ namespace RPG_OOP
 
                 }
 
+                if (input == "clear")
+                {
+                    Console.Clear();
+                }
+
 
                 if (comb == true)
                 {
@@ -118,7 +123,7 @@ namespace RPG_OOP
         void krok() 
         {
 
-                string filePath = @"C:\\Users\\PCnetz\\Desktop\\PRG\\RPG-OOP\\negr.txt";
+                string filePath = @"C:\\Users\\axolo\\Source\\Repos\\TheDzejkob\\RPG-OOP\\RPG OOP\\negr.txt";
 
                 
                 string[] lines = File.ReadAllLines(filePath);
@@ -324,6 +329,11 @@ namespace RPG_OOP
 
             void trade()
             {
+                bool trading = true;
+                while (trading == true )
+                {
+
+
                 Console.WriteLine("--Itemy nabýzené traderem--");
                 Console.WriteLine("1 pro zakoupení topůrka za 5 Coinů");
                 Console.WriteLine("2 pro zakoupení čepele sekery za 3 Coiny");
@@ -371,7 +381,17 @@ namespace RPG_OOP
                     Console.WriteLine("Nemáš dostatek Coinů");
                 }
 
+                if (tradeRoz == "4"  )
+                {
+                        Console.WriteLine("Loučíš se s traderem");
+                        trading = false;
+                }
+
+                }
+
             }
+
+            
 
         }
     }
