@@ -118,9 +118,10 @@ namespace RPG_OOP
         void krok() 
         {
 
-                string filePath = @"C:\\Users\\PCnetz\\Desktop\\PRG\\RPG-OOP\\negr.txt";
+                string text = File.ReadAllText(
+                Path.Combine(Environment.CurrentDirectory, "\\negr.txt"));
 
-                
+
                 string[] lines = File.ReadAllLines(filePath);
 
                 
@@ -201,6 +202,8 @@ namespace RPG_OOP
                     Console.WriteLine("1 Ano, ukaž mi co nabízíš");
                     Console.WriteLine("2 Ne, momentálně obchodovat nechci");
                     string trad = Console.ReadLine();
+                    while (tra == true)
+                    {
                     if (trad == "1")
                     {
                         trade();
@@ -218,7 +221,7 @@ namespace RPG_OOP
                 }
 
                 //Jsou 4h rano a mam v sobe 4ty kafe, miluju svuj zivot xD
-                //o tejden pozdejs a nic se nezmenilo :D
+                // progress solidní ale kofein levels furt stejný
         }
 
 
