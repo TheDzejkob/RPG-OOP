@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Runtime.InteropServices;
+using Spectre.Console;
 
 
 namespace RPG_OOP
@@ -16,6 +17,8 @@ namespace RPG_OOP
 
         static void Main(string[] args)
         {
+
+
             bool comb = false;
 
             Entity enemy;
@@ -31,11 +34,23 @@ namespace RPG_OOP
             while (meno == "")
             {
 
-                Console.WriteLine("Vspiš meno pro svou postavu");
-                meno = Console.ReadLine();
+                var name = AnsiConsole.Ask<string>("[bold green]Jak ti máme říkat dobrodruhu?[/]");
+                meno = name;
+                overeniMeno();
 
             }
-
+            void overeniMeno()
+            {
+                var overeni = AnsiConsole.Prompt(
+                    new SelectionPrompt<string>()
+                    .Title("Přeješ si být tedy nazívaný" + meno + "?")
+                    .PageSize(3)
+                    .AddChoices(new[] {
+                        "Ano", "Ne",
+                    }));
+                    if (overeni == "Ano")
+                    { Console.WriteLine("Nigga"); }
+            }
 
             Console.WriteLine("-----------------");
 
