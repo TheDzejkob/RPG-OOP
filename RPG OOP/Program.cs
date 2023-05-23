@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Runtime.InteropServices;
 using Spectre.Console;
-
+using System.Security.Cryptography.X509Certificates;
 
 namespace RPG_OOP
 {
@@ -30,7 +30,7 @@ namespace RPG_OOP
             bool kro = false;
 
             bool utek = true;
-
+            void jmeno() { }
             while (meno == "")
             {
 
@@ -49,7 +49,9 @@ namespace RPG_OOP
                         "Ano", "Ne",
                     }));
                     if (overeni == "Ano")
-                    { Console.WriteLine("Nigga"); }
+                    {
+                    
+                    }
             }
 
             Console.WriteLine("-----------------");
