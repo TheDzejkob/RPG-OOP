@@ -81,7 +81,6 @@ namespace RPG_OOP
                         krok();
                     }
 
-
                     if (player.Hp <= 0 || input == "exit")
                     {
                         Console.Clear();
@@ -96,21 +95,29 @@ namespace RPG_OOP
                         Console.ReadLine();
                         break;
                     }
-
-                    if (input == "help")
+                    if (input == "menu")
                     {
-
-                        Console.WriteLine("Všechny použitelné příkazy");
-                        Console.WriteLine("--------------------------");
-                        Console.WriteLine("exit  příkaz pro opuštění programu");
-                        Console.WriteLine("help pro zobrazeni tohoto menu");
-                        Console.WriteLine("postava pro výpis atributů a inventáře tvé postavy");
-                        Console.ReadLine();
-
+                       menu();
                     }
-
-                    if (input == "postava")
+                    void menu() 
                     {
+                        var overeni = AnsiConsole.Prompt(
+                       new SelectionPrompt<string>()
+                       .Title("[green]MENU[/]")
+                       .PageSize(6)
+                       .AddChoices(new[] {
+                        "Staty", "Inventář","Bestiář (Work in progress)","Crafting (Work in progress)",
+                       }));
+                        if (overeni == "Staty")
+                        { 
+                            staty();
+                        }
+                        if (overeni == "Inventář")
+                        { 
+                            inventory(); 
+                        }
+                    }
+                    void staty() {
                         Console.Clear();
                         Console.WriteLine("Tvá postava");
                         Console.WriteLine("-----------");
@@ -118,6 +125,26 @@ namespace RPG_OOP
                         Console.WriteLine("Životy: " + player.Hp);
                         Console.WriteLine("Počet kroků: " + player.Stepcounter);
                         Console.WriteLine("Coiny: " + player.Coiny);
+                        //if (player.Items.Count == 0)
+                        //{
+                        //    Console.WriteLine("Tvůj inventář: " + "Tvůj Inventář je prázdný");
+                        //}
+                        //else
+                        //{
+                        //    Console.WriteLine("-Tvůj inventář-");
+                        //    Console.WriteLine("       ↓      ");
+                        //    for (int i = 0; i < player.Items.Count; i++)
+                        //    {
+                        //        Console.WriteLine(player.Items[i].Name);
+                        //    }
+                        //}
+
+                        Console.ReadLine();
+
+                    }
+
+                    void inventory()
+                    {
                         if (player.Items.Count == 0)
                         {
                             Console.WriteLine("Tvůj inventář: " + "Tvůj Inventář je prázdný");
@@ -133,8 +160,8 @@ namespace RPG_OOP
                         }
 
                         Console.ReadLine();
-
                     }
+
 
                 }
             }
