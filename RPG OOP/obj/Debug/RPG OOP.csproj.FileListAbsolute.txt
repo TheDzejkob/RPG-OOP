@@ -22,22 +22,11 @@ C:\Users\PCnetz\Desktop\PRG\RPG-OOP\RPG OOP\obj\Debug\RPG OOP.csproj.SuggestedBi
 C:\Users\PCnetz\Desktop\PRG\RPG-OOP\RPG OOP\obj\Debug\RPG OOP.csproj.CoreCompileInputs.cache
 C:\Users\PCnetz\Desktop\PRG\RPG-OOP\RPG OOP\obj\Debug\RPG OOP.exe
 C:\Users\PCnetz\Desktop\PRG\RPG-OOP\RPG OOP\obj\Debug\RPG OOP.pdb
-C:\Users\PCnetz\Desktop\PRG\RPG-OOP\RPG-OOP\bin\Debug\RPG OOP.exe.config
-C:\Users\PCnetz\Desktop\PRG\RPG-OOP\RPG-OOP\bin\Debug\RPG OOP.exe
-C:\Users\PCnetz\Desktop\PRG\RPG-OOP\RPG-OOP\bin\Debug\RPG OOP.pdb
-C:\Users\PCnetz\Desktop\PRG\RPG-OOP\RPG-OOP\obj\Debug\RPG OOP.csproj.AssemblyReference.cache
-C:\Users\PCnetz\Desktop\PRG\RPG-OOP\RPG-OOP\obj\Debug\RPG OOP.csproj.SuggestedBindingRedirects.cache
-C:\Users\PCnetz\Desktop\PRG\RPG-OOP\RPG-OOP\obj\Debug\RPG OOP.csproj.CoreCompileInputs.cache
-C:\Users\PCnetz\Desktop\PRG\RPG-OOP\RPG-OOP\obj\Debug\RPG OOP.exe
-C:\Users\PCnetz\Desktop\PRG\RPG-OOP\RPG-OOP\obj\Debug\RPG OOP.pdb
-C:\Users\PCnetz\Desktop\PRG\RPG-OOP\RPG OOP\bin\Debug\Spectre.Console.dll
-C:\Users\PCnetz\Desktop\PRG\RPG-OOP\RPG OOP\bin\Debug\System.Buffers.dll
-C:\Users\PCnetz\Desktop\PRG\RPG-OOP\RPG OOP\bin\Debug\System.Memory.dll
-C:\Users\PCnetz\Desktop\PRG\RPG-OOP\RPG OOP\bin\Debug\System.Numerics.Vectors.dll
-C:\Users\PCnetz\Desktop\PRG\RPG-OOP\RPG OOP\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\PCnetz\Desktop\PRG\RPG-OOP\RPG OOP\bin\Debug\Spectre.Console.xml
-C:\Users\PCnetz\Desktop\PRG\RPG-OOP\RPG OOP\bin\Debug\System.Buffers.xml
-C:\Users\PCnetz\Desktop\PRG\RPG-OOP\RPG OOP\bin\Debug\System.Memory.xml
-C:\Users\PCnetz\Desktop\PRG\RPG-OOP\RPG OOP\bin\Debug\System.Numerics.Vectors.xml
-C:\Users\PCnetz\Desktop\PRG\RPG-OOP\RPG OOP\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\PCnetz\Desktop\PRG\RPG-OOP\RPG OOP\obj\Debug\RPG OOP.csproj.CopyComplete
+C:\Users\axolo\Source\Repos\TheDzejkob\RPG-OOP\RPG OOP\bin\Debug\RPG OOP.exe.config
+C:\Users\axolo\Source\Repos\TheDzejkob\RPG-OOP\RPG OOP\bin\Debug\RPG OOP.exe
+C:\Users\axolo\Source\Repos\TheDzejkob\RPG-OOP\RPG OOP\bin\Debug\RPG OOP.pdb
+C:\Users\axolo\Source\Repos\TheDzejkob\RPG-OOP\RPG OOP\obj\Debug\RPG OOP.csproj.AssemblyReference.cache
+C:\Users\axolo\Source\Repos\TheDzejkob\RPG-OOP\RPG OOP\obj\Debug\RPG OOP.csproj.SuggestedBindingRedirects.cache
+C:\Users\axolo\Source\Repos\TheDzejkob\RPG-OOP\RPG OOP\obj\Debug\RPG OOP.csproj.CoreCompileInputs.cache
+C:\Users\axolo\Source\Repos\TheDzejkob\RPG-OOP\RPG OOP\obj\Debug\RPG OOP.exe
+C:\Users\axolo\Source\Repos\TheDzejkob\RPG-OOP\RPG OOP\obj\Debug\RPG OOP.pdb
