@@ -125,6 +125,7 @@ namespace RPG_OOP
                         krok();
                     }
 
+
                     if (player.Hp <= 0 || input == "exit")
                     {
 <<<<<<< HEAD
@@ -147,8 +148,10 @@ namespace RPG_OOP
                         Console.ReadLine();
                         break;
                     }
-                    if (input == "menu")
+
+                    if (input == "help")
                     {
+<<<<<<< HEAD
                         menu();
                     }
                     void menu()
@@ -172,6 +175,20 @@ namespace RPG_OOP
                     }
                     void staty()
                     {
+=======
+
+                        Console.WriteLine("Všechny použitelné příkazy");
+                        Console.WriteLine("--------------------------");
+                        Console.WriteLine("exit  příkaz pro opuštění programu");
+                        Console.WriteLine("help pro zobrazeni tohoto menu");
+                        Console.WriteLine("postava pro výpis atributů a inventáře tvé postavy");
+                        Console.ReadLine();
+
+                    }
+
+                    if (input == "postava")
+                    {
+>>>>>>> parent of ddfbac7 (Menu)
                         Console.Clear();
                         Console.WriteLine("Tvá postava");
                         Console.WriteLine("-----------");
@@ -179,26 +196,6 @@ namespace RPG_OOP
                         Console.WriteLine("Životy: " + player.Hp);
                         Console.WriteLine("Počet kroků: " + player.Stepcounter);
                         Console.WriteLine("Coiny: " + player.Coiny);
-                        //if (player.Items.Count == 0)
-                        //{
-                        //    Console.WriteLine("Tvůj inventář: " + "Tvůj Inventář je prázdný");
-                        //}
-                        //else
-                        //{
-                        //    Console.WriteLine("-Tvůj inventář-");
-                        //    Console.WriteLine("       ↓      ");
-                        //    for (int i = 0; i < player.Items.Count; i++)
-                        //    {
-                        //        Console.WriteLine(player.Items[i].Name);
-                        //    }
-                        //}
-
-                        Console.ReadLine();
-
-                    }
-
-                    void inventory()
-                    {
                         if (player.Items.Count == 0)
                         {
                             Console.WriteLine("Tvůj inventář: " + "Tvůj Inventář je prázdný");
@@ -214,8 +211,8 @@ namespace RPG_OOP
                         }
 
                         Console.ReadLine();
-                    }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
                     Console.ReadLine();
 =======
@@ -301,6 +298,9 @@ namespace RPG_OOP
 >>>>>>> parent of ddfbac7 (Menu)
 =======
 >>>>>>> 51d890e05b67384df4016b4ff26783c6de3ef154
+=======
+                    }
+>>>>>>> parent of ddfbac7 (Menu)
 
                 }
 <<<<<<< HEAD
