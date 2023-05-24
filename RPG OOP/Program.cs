@@ -30,31 +30,40 @@ namespace RPG_OOP
             bool kro = false;
 
             bool utek = true;
-            void jmeno() { }
+            jmeno();
+            void jmeno() { 
             while (meno == "")
             {
 
-                var name = AnsiConsole.Ask<string>("[bold green]Jak ti máme říkat dobrodruhu?[/]");
+                var name = AnsiConsole.Ask<string>("[italic green]Jak ti máme říkat dobrodruhu?[/]");
                 meno = name;
                 overeniMeno();
 
+            }
             }
             void overeniMeno()
             {
                 var overeni = AnsiConsole.Prompt(
                     new SelectionPrompt<string>()
-                    .Title("Přeješ si být tedy nazívaný" + meno + "?")
+                    .Title("Přeješ si být tedy nazíván/a " + meno + "?")
                     .PageSize(3)
                     .AddChoices(new[] {
                         "Ano", "Ne",
                     }));
                     if (overeni == "Ano")
                     {
-                    
+                    AnsiConsole.Write(new Markup("[bold green] Dobrá tedy tvé jméno je [/] " + meno + "."));
+                    }
+                    else
+                    {
+                    meno = "";
+                    jmeno();
                     }
             }
+            
 
-            Console.WriteLine("-----------------");
+            Console.ReadLine();
+            AnsiConsole.Write(new Markup("[#8d99ae]------------------[/]"));
 
             Player player = new Player(meno, 20, 2, true, 0, 1.5, new List<Item>(), 0);
 
@@ -75,11 +84,15 @@ namespace RPG_OOP
 
                     if (player.Hp <= 0 || input == "exit")
                     {
-                        Console.WriteLine("zemřel jsi");
-                        Console.ReadLine();
                         Console.Clear();
-                        Console.WriteLine("Zemřel hrdina jménem: " + player.Name);
-                        Console.WriteLine("S počtem kroků: " + player.Stepcounter);
+                        var table = new Table();
+                        table.AddColumn(new TableColumn("SuperTajnýSkrytýNadpis"));
+                        table.AddRow("Zemřel hrdina jménem " + player.Name + " \nS počtem kroků " + player.Stepcounter + "\nNechť je ti zem lehká příteli");
+                        table.Title("[bold red]Zemřel Jsi[/]"); table.HideHeaders();
+                        table.Border(TableBorder.AsciiDoubleHead);
+                        table.BorderColor(Color.Red);
+                        table.Centered();
+                        AnsiConsole.Write(table);
                         Console.ReadLine();
                         break;
                     }
