@@ -92,6 +92,7 @@ namespace RPG_OOP
                     }
                     else
                     {
+<<<<<<< HEAD
                     Console.WriteLine("-Tvůj inventář-");
                     Console.WriteLine("       ↓      ");
                         for(int i = 0; i < player.Items.Count; i++)
@@ -101,6 +102,87 @@ namespace RPG_OOP
                     }
 
                     Console.ReadLine();
+=======
+                    meno = "";
+                    jmeno();
+                    }
+            }
+            
+
+            Console.ReadLine();
+            AnsiConsole.Write(new Markup("[#8d99ae]------------------[/]"));
+
+            Player player = new Player(meno, 20, 2, true, 0, 1.5, new List<Item>(), 0);
+
+
+            zacatek();
+            void zacatek()
+            {
+                string input = "";
+
+                while (input == "" || comb == false)
+                {
+                    input = Console.ReadLine();
+                    if (input == "")
+                    {
+                        krok();
+                    }
+
+
+                    if (player.Hp <= 0 || input == "exit")
+                    {
+                        Console.Clear();
+                        var table = new Table();
+                        table.AddColumn(new TableColumn("SuperTajnýSkrytýNadpis"));
+                        table.AddRow("Zemřel hrdina jménem " + player.Name + " \nS počtem kroků " + player.Stepcounter + "\nNechť je ti zem lehká příteli");
+                        table.Title("[bold red]Zemřel Jsi[/]"); table.HideHeaders();
+                        table.Border(TableBorder.AsciiDoubleHead);
+                        table.BorderColor(Color.Red);
+                        table.Centered();
+                        AnsiConsole.Write(table);
+                        Console.ReadLine();
+                        break;
+                    }
+
+                    if (input == "help")
+                    {
+
+                        Console.WriteLine("Všechny použitelné příkazy");
+                        Console.WriteLine("--------------------------");
+                        Console.WriteLine("exit  příkaz pro opuštění programu");
+                        Console.WriteLine("help pro zobrazeni tohoto menu");
+                        Console.WriteLine("postava pro výpis atributů a inventáře tvé postavy");
+                        Console.ReadLine();
+
+                    }
+
+                    if (input == "postava")
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Tvá postava");
+                        Console.WriteLine("-----------");
+                        Console.WriteLine("Jméno: " + player.Name);
+                        Console.WriteLine("Životy: " + player.Hp);
+                        Console.WriteLine("Počet kroků: " + player.Stepcounter);
+                        Console.WriteLine("Coiny: " + player.Coiny);
+                        if (player.Items.Count == 0)
+                        {
+                            Console.WriteLine("Tvůj inventář: " + "Tvůj Inventář je prázdný");
+                        }
+                        else
+                        {
+                            Console.WriteLine("-Tvůj inventář-");
+                            Console.WriteLine("       ↓      ");
+                            for (int i = 0; i < player.Items.Count; i++)
+                            {
+                                Console.WriteLine(player.Items[i].Name);
+                            }
+                        }
+
+                        Console.ReadLine();
+
+                    }
+>>>>>>> parent of ddfbac7 (Menu)
 
                 }
 
