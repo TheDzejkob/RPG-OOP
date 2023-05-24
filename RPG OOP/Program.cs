@@ -8,6 +8,7 @@ using System.IO;
 using System.Runtime.InteropServices;
 using Spectre.Console;
 using System.Security.Cryptography.X509Certificates;
+using System.Threading;
 
 namespace RPG_OOP
 {
@@ -30,6 +31,32 @@ namespace RPG_OOP
             bool kro = false;
 
             bool utek = true;
+
+            startScrean();
+            void startScrean() 
+            {
+                AnsiConsole.Write(new FigletText("Text RPG")
+            .Centered()
+            .Color(Color.Red));
+                // Create a list of Items
+                var columns = new List<Text>(){
+                new Text("                                      "),
+                new Text("                                      "),
+                new Text("Made by LedzGames",new Style(Color.Red, Color.Black)),
+                };
+                AnsiConsole.Write(new Columns(columns));
+
+                // Asynchronous
+                AnsiConsole.Status()
+                    .StartAsync("Loading...", async ctx =>
+                    {
+                        Thread.Sleep(2000);
+                    });
+
+                Console.Clear();
+            }
+
+
             jmeno();
             void jmeno() { 
             while (meno == "")
