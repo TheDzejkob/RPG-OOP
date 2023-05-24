@@ -433,10 +433,10 @@ namespace RPG_OOP
                         .Title("[underline yellow]Vyber akci kterou provedeš[/]")
                         .PageSize(5)
                         .AddChoices(new[] {
-                        "Zakoupení topůrka za 5 Coinů", "Zakoupení čepele sekery za 3 Coiny","Zakoupení obvazu za 10 Coinů","Odchod"
+                        "Zakoupit topůrko", "Zakoupit čepel","Zakoupit obvaz","Odchod"
                         }));
 
-                    if (tradeRoz == "Zakoupení topůrka za 5 Coinů" && player.Coiny >= 5)
+                    if (tradeRoz == "Zakoupit topůrko" && player.Coiny >= 5)
                     {
                         Item topurko = new Item("Topůrko", 0, 0, true, 4, 0);
                         player.Items.Add(topurko);
@@ -444,33 +444,33 @@ namespace RPG_OOP
 
 
                     }
-                    if (tradeRoz == "1" && player.Coiny < 5)
+                    if (tradeRoz == "Zakoupit topůrko" && player.Coiny < 5)
                     {
                         Console.WriteLine("Nemáš dostatek Coinů");
                     }
 
 
-                    if (tradeRoz == "Zakoupení čepele sekery za 3 Coiny" && player.Coiny >= 3)
+                    if (tradeRoz == "Zakoupit čepel" && player.Coiny >= 3)
                     {
                         Item cepel = new Item("Čepel sekery", 0, 0, true, 2, 0);
                         player.Items.Add(cepel);
                         Console.WriteLine("Zakoupil jsi čepel sekery za 3 coiny, byla ti přidáno do Inventáře");
 
                     }
-                    if (tradeRoz == "Zakoupení čepele sekery za 3 Coiny" && player.Coiny < 3)
+                    if (tradeRoz == "Zakoupit čepel" && player.Coiny < 3)
                     {
                         Console.WriteLine("Nemáš dostatek Coinů");
                     }
 
 
-                    if (tradeRoz == "Zakoupení obvazu za 10 Coinů" && player.Coiny >= 10)
+                    if (tradeRoz == "Zakoupit obvaz" && player.Coiny >= 10)
                     {
                         Item obvaz = new Item("Obvaz", 0, 0, false, 0, 10);
                         player.Items.Add(obvaz);
                         Console.WriteLine("Zakoupil jsi obvaz za 10 Coinů, byl ti přidán do Inventáře ");
 
                     }
-                    if (tradeRoz == "Zakoupení obvazu za 10 Coinů" && player.Coiny < 10)
+                    if (tradeRoz == "Zakoupit obvaz" && player.Coiny < 10)
                     {
                         Console.WriteLine("Nemáš dostatek Coinů");
                     }
