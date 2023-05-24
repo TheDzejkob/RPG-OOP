@@ -145,14 +145,7 @@ namespace RPG_OOP
                         //Console.WriteLine("Coiny: " + player.Coiny);
 
                         //Console.ReadLine();
-                        var table = new Table();
-                        table.AddColumn(new TableColumn("[bold blue]Staty[/]"));
-                        table.AddRow("Zemřel hrdina jménem " + player.Name + " \nS počtem kroků " + player.Stepcounter + "\nNechť je ti zem lehká příteli");
-                        table.Title("[bold red]Zemřel Jsi[/]"); table.HideHeaders();
-                        table.Border(TableBorder.AsciiDoubleHead);
-                        table.BorderColor(Color.Red);
-                        table.Centered();
-                        AnsiConsole.Write(table);
+                        
 
                     }
 
