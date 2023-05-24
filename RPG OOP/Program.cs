@@ -96,6 +96,7 @@ namespace RPG_OOP
             Player player = new Player(meno, 20, 2, true, 0, 1.5, new List<Item>(), 0);
 
 
+
             zacatek();
             void zacatek()
             {
@@ -108,22 +109,11 @@ namespace RPG_OOP
                     {
                         krok();
                     }
+                    if (player.Hp <= 0 || input == "exit") { smrt();}
+                    
 
-                    if (player.Hp <= 0 || input == "exit")
-                    {
-                        Console.Clear();
-                        var table = new Table();
-                        table.AddColumn(new TableColumn("SuperTajnýSkrytýNadpis"));
-                        table.AddRow("Zemřel hrdina jménem " + player.Name + " \nS počtem kroků " + player.Stepcounter + "\nNechť je ti zem lehká příteli");
-                        table.Title("[bold red]Zemřel Jsi[/]"); table.HideHeaders();
-                        table.Border(TableBorder.AsciiDoubleHead);
-                        table.BorderColor(Color.Red);
-                        table.Centered();
-                        AnsiConsole.Write(table);
-                        Console.ReadLine();
-                        break;
-                    }
-                    if (input == "menu")
+
+                if (input == "menu")
                     {
                        menu();
                     }
@@ -179,6 +169,23 @@ namespace RPG_OOP
 
 
                 }
+            }
+
+            void smrt()
+            {
+
+                Console.Clear();
+                var table = new Table();
+                table.AddColumn(new TableColumn("SuperTajnýSkrytýNadpis"));
+                table.AddRow("Zemřel hrdina jménem " + player.Name + " \nS počtem kroků " + player.Stepcounter + "\nNechť je ti zem lehká příteli");
+                table.Title("[bold red]Zemřel Jsi[/]"); table.HideHeaders();
+                table.Border(TableBorder.AsciiDoubleHead);
+                table.BorderColor(Color.Red);
+                table.Centered();
+                AnsiConsole.Write(table);
+                Console.ReadLine();
+                Environment.Exit(0);
+
             }
 
             void krok()
@@ -269,8 +276,6 @@ namespace RPG_OOP
                         Console.WriteLine("1 Ano, ukaž mi co nabízíš");
                         Console.WriteLine("2 Ne, momentálně obchodovat nechci");
                         string trad = Console.ReadLine();
-                        while (tra == true)
-                        {
                             if (trad == "1")
                             {
                                 trade();
@@ -282,9 +287,8 @@ namespace RPG_OOP
                             }
                             else
                             {
-
+                                
                             }
-                        }
                     }
 
                     //Jsou 4h rano a mam v sobe 4ty kafe, miluju svuj zivot xD
@@ -307,18 +311,21 @@ namespace RPG_OOP
                     .AddItem(enemy.Name,enemy.Hp, Color.Red));
                     Console.WriteLine();
 
-                    Console.WriteLine("Vyber jednu z nasledujících možností");
-                    Console.WriteLine("1 pro základní útok");
-                    Console.WriteLine("2 pro těžký útok");
-                    Console.WriteLine("3 pro pokus o útěk");
+                    var comba = AnsiConsole.Prompt(
+                    new SelectionPrompt<string>()
+                    .Title("Vyber akci kterou provedeš " + meno + "?")
+                    .PageSize(4)
+                    .AddChoices(new[] {
+                        "Základní útok", "Těžký útok","Pokus o útěk"
+                    }));
 
-                    string comba = Console.ReadLine();
                     if (enemy.Hp <= 0)
                     {
                         krok();
                     }
+                    
 
-                    if (comba == "1")
+                    if (comba == "Základní útok" && player.Hp >0)
                     {
                         int result1 = enemy.Hp - player.Dmg;
                         enemy.Hp = result1;
@@ -331,14 +338,14 @@ namespace RPG_OOP
 
 
                     }
-                    if (comba == "2" && heavy == false)
+                    if (comba == "Těžký útok" && heavy == false && player.Hp > 0)
                     {
                         Console.WriteLine("-----------------------------");
                         Console.WriteLine("Teď nemůžeš použít těžký útok");
                         Console.ReadLine();
                     }
 
-                    if (comba == "2" && heavy == true)
+                    if (comba == "Těžký útok" && heavy == true && player.Hp > 0)
                     {
                         heavy = false;
                         int result2 = (int)(enemy.Hp - (player.Dmg * player.Multiplier));
@@ -353,13 +360,13 @@ namespace RPG_OOP
 
                     }
 
-                    if (comba == "3" && utek == false)
+                    if (comba == "Pokus o útěk" && utek == false && player.Hp > 0)
                     {
                         Console.WriteLine("O útěk jsi se již pokusil a nevyšlo to");
 
                     }
 
-                    if (comba == "3" && utek == true)
+                    if (comba == "Pokus o útěk" && utek == true && player.Hp > 0)
                     {
                         bool GeneratorBool()
                         {
@@ -402,6 +409,9 @@ namespace RPG_OOP
 
                 void trade()
                 {
+                    bool trading = true;
+                    while (trading == true) 
+                    {
                     Console.WriteLine("--Itemy nabýzené traderem--");
                     Console.WriteLine("1 pro zakoupení topůrka za 5 Coinů");
                     Console.WriteLine("2 pro zakoupení čepele sekery za 3 Coiny");
@@ -448,7 +458,11 @@ namespace RPG_OOP
                     {
                         Console.WriteLine("Nemáš dostatek Coinů");
                     }
-
+                    if (tradeRoz == "4")
+                    {
+                            trading = false;
+                    }
+                    }
                 }
 
             }
