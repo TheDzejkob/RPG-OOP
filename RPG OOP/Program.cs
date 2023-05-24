@@ -136,15 +136,23 @@ namespace RPG_OOP
                         }
                     }
                     void staty() {
-                        Console.Clear();
-                        Console.WriteLine("Tvá postava");
-                        Console.WriteLine("-----------");
-                        Console.WriteLine("Jméno: " + player.Name);
-                        Console.WriteLine("Životy: " + player.Hp);
-                        Console.WriteLine("Počet kroků: " + player.Stepcounter);
-                        Console.WriteLine("Coiny: " + player.Coiny);
+                        //Console.Clear();
+                        //Console.WriteLine("Tvá postava");
+                        //Console.WriteLine("-----------");
+                        //Console.WriteLine("Jméno: " + player.Name);
+                        //Console.WriteLine("Životy: " + player.Hp);
+                        //Console.WriteLine("Počet kroků: " + player.Stepcounter);
+                        //Console.WriteLine("Coiny: " + player.Coiny);
 
-                        Console.ReadLine();
+                        //Console.ReadLine();
+                        var table = new Table();
+                        table.AddColumn(new TableColumn("[bold blue]Staty[/]"));
+                        table.AddRow("Zemřel hrdina jménem " + player.Name + " \nS počtem kroků " + player.Stepcounter + "\nNechť je ti zem lehká příteli");
+                        table.Title("[bold red]Zemřel Jsi[/]"); table.HideHeaders();
+                        table.Border(TableBorder.AsciiDoubleHead);
+                        table.BorderColor(Color.Red);
+                        table.Centered();
+                        AnsiConsole.Write(table);
 
                     }
 
@@ -272,16 +280,21 @@ namespace RPG_OOP
                     bool tra = true;
                     while (tra == true)
                     {
-                        Console.WriteLine("Chceš začít obchodovat?");
-                        Console.WriteLine("1 Ano, ukaž mi co nabízíš");
-                        Console.WriteLine("2 Ne, momentálně obchodovat nechci");
-                        string trad = Console.ReadLine();
-                            if (trad == "1")
+                        var trad = AnsiConsole.Prompt(
+                        new SelectionPrompt<string>()
+                        .Title("[underline yellow]Vyber akci kterou provedeš[/]")
+                        .PageSize(4)
+                        .AddChoices(new[] {
+                            "Ano ukaž co nabýzíš", "Ne nemám zájem o obchodování"
+                        }));
+
+                        
+                            if (trad == "Ano ukaž co nabýzíš")
                             {
                                 trade();
                                 tra = false;
                             }
-                            else if (trad == "2")
+                            else if (trad == "Ne nemám zájem o obchodování")
                             {
                                 tra = false;
                             }
