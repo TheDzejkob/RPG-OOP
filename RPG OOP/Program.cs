@@ -125,19 +125,6 @@ namespace RPG_OOP
                         Console.WriteLine("Životy: " + player.Hp);
                         Console.WriteLine("Počet kroků: " + player.Stepcounter);
                         Console.WriteLine("Coiny: " + player.Coiny);
-                        //if (player.Items.Count == 0)
-                        //{
-                        //    Console.WriteLine("Tvůj inventář: " + "Tvůj Inventář je prázdný");
-                        //}
-                        //else
-                        //{
-                        //    Console.WriteLine("-Tvůj inventář-");
-                        //    Console.WriteLine("       ↓      ");
-                        //    for (int i = 0; i < player.Items.Count; i++)
-                        //    {
-                        //        Console.WriteLine(player.Items[i].Name);
-                        //    }
-                        //}
 
                         Console.ReadLine();
 
