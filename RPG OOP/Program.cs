@@ -48,6 +48,7 @@ namespace RPG_OOP
 
                 // Asynchronous
                 AnsiConsole.Status()
+                    .Spinner(Spinner.Known.Noise)
                     .StartAsync("Načítání...", async ctx =>
                     {
                         Thread.Sleep(2000);
@@ -288,6 +289,7 @@ namespace RPG_OOP
 
                     //Jsou 4h rano a mam v sobe 4ty kafe, miluju svuj zivot xD
                     // progress solidní ale kofein levels furt stejný
+                    // dalsi progress dalsi koment :D 
                 }
 
 
@@ -296,6 +298,13 @@ namespace RPG_OOP
                     comb = true;
 
 
+                    Console.WriteLine();
+                    AnsiConsole.Write(new BarChart()
+                    .Width(60)
+                    .Label("[green bold underline]Životy[/]")
+                    .CenterLabel()
+                    .AddItem(player.Name, player.Hp, Color.Green)
+                    .AddItem(enemy.Name,enemy.Hp, Color.Red));
                     Console.WriteLine();
 
                     Console.WriteLine("Vyber jednu z nasledujících možností");
