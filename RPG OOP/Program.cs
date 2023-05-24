@@ -295,11 +295,14 @@ namespace RPG_OOP
                         Console.ReadLine();
 
                     }
+<<<<<<< HEAD
 >>>>>>> parent of ddfbac7 (Menu)
 =======
 >>>>>>> 51d890e05b67384df4016b4ff26783c6de3ef154
 =======
                     }
+>>>>>>> parent of ddfbac7 (Menu)
+=======
 >>>>>>> parent of ddfbac7 (Menu)
 
                 }
