@@ -415,15 +415,28 @@ namespace RPG_OOP
                     bool trading = true;
                     while (trading == true) 
                     {
-                    Console.WriteLine("--Itemy nabýzené traderem--");
-                    Console.WriteLine("1 pro zakoupení topůrka za 5 Coinů");
-                    Console.WriteLine("2 pro zakoupení čepele sekery za 3 Coiny");
-                    Console.WriteLine("3 pro zakoupení obvazu za 10 Coinů");
-                    Console.WriteLine("4 pro odchod");
 
-                    string tradeRoz = Console.ReadLine();
+                        var table = new Table();
+                        table.AddColumn(new TableColumn("Produkt"));
+                        table.AddColumn(new TableColumn("Cena"));
+                        table.AddRow("Topůrko","5 Coinů");
+                        table.AddRow("Čepel","3 Coiny");
+                        table.AddRow("Obvaz", "10 Coinů");
+                        table.Title("[bold yellow]Obchodník[/]");
+                        table.Border(TableBorder.AsciiDoubleHead);
+                        table.BorderColor(Color.LightCyan1);
+                        table.Centered();
+                        AnsiConsole.Write(table);
 
-                    if (tradeRoz == "1" && player.Coiny >= 5)
+                        var tradeRoz = AnsiConsole.Prompt(
+                        new SelectionPrompt<string>()
+                        .Title("[underline yellow]Vyber akci kterou provedeš[/]")
+                        .PageSize(5)
+                        .AddChoices(new[] {
+                        "Zakoupení topůrka za 5 Coinů", "Zakoupení čepele sekery za 3 Coiny","Zakoupení obvazu za 10 Coinů","Odchod"
+                        }));
+
+                    if (tradeRoz == "Zakoupení topůrka za 5 Coinů" && player.Coiny >= 5)
                     {
                         Item topurko = new Item("Topůrko", 0, 0, true, 4, 0);
                         player.Items.Add(topurko);
@@ -437,31 +450,31 @@ namespace RPG_OOP
                     }
 
 
-                    if (tradeRoz == "2" && player.Coiny >= 3)
+                    if (tradeRoz == "Zakoupení čepele sekery za 3 Coiny" && player.Coiny >= 3)
                     {
                         Item cepel = new Item("Čepel sekery", 0, 0, true, 2, 0);
                         player.Items.Add(cepel);
                         Console.WriteLine("Zakoupil jsi čepel sekery za 3 coiny, byla ti přidáno do Inventáře");
 
                     }
-                    if (tradeRoz == "2" && player.Coiny < 3)
+                    if (tradeRoz == "Zakoupení čepele sekery za 3 Coiny" && player.Coiny < 3)
                     {
                         Console.WriteLine("Nemáš dostatek Coinů");
                     }
 
 
-                    if (tradeRoz == "3" && player.Coiny >= 10)
+                    if (tradeRoz == "Zakoupení obvazu za 10 Coinů" && player.Coiny >= 10)
                     {
                         Item obvaz = new Item("Obvaz", 0, 0, false, 0, 10);
                         player.Items.Add(obvaz);
                         Console.WriteLine("Zakoupil jsi obvaz za 10 Coinů, byl ti přidán do Inventáře ");
 
                     }
-                    if (tradeRoz == "3" && player.Coiny < 10)
+                    if (tradeRoz == "Zakoupení obvazu za 10 Coinů" && player.Coiny < 10)
                     {
                         Console.WriteLine("Nemáš dostatek Coinů");
                     }
-                    if (tradeRoz == "4")
+                    if (tradeRoz == "Odchod")
                     {
                             trading = false;
                     }
