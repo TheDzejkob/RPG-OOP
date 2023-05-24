@@ -313,7 +313,7 @@ namespace RPG_OOP
 
                     var comba = AnsiConsole.Prompt(
                     new SelectionPrompt<string>()
-                    .Title("Vyber akci kterou provedeš " + meno + "?")
+                    .Title("[underline yellow]Vyber akci kterou provedeš[/]")
                     .PageSize(4)
                     .AddChoices(new[] {
                         "Základní útok", "Těžký útok","Pokus o útěk"
@@ -329,7 +329,7 @@ namespace RPG_OOP
                     {
                         int result1 = enemy.Hp - player.Dmg;
                         enemy.Hp = result1;
-                        Console.WriteLine("Udělil jsi " + player.Dmg + " poškození nepříteli " + enemy.Name + " a zbylo mu " + enemy.Hp + " životů.");
+                        AnsiConsole.Write(new Markup("[green]Udělil jsi[/] " + player.Dmg + " [green]poškození nepříteli[/] " + enemy.Name));
                         Console.ReadLine();
                         if (enemy.Hp > 0)
                         {
@@ -341,7 +341,7 @@ namespace RPG_OOP
                     if (comba == "Těžký útok" && heavy == false && player.Hp > 0)
                     {
                         Console.WriteLine("-----------------------------");
-                        Console.WriteLine("Teď nemůžeš použít těžký útok");
+                        AnsiConsole.Write(new Markup("[red]Teď nemůžeš použít těžký útok[/]"));
                         Console.ReadLine();
                     }
 
@@ -350,7 +350,7 @@ namespace RPG_OOP
                         heavy = false;
                         int result2 = (int)(enemy.Hp - (player.Dmg * player.Multiplier));
                         enemy.Hp = result2;
-                        Console.WriteLine("Zasadil jsi nepříteli " + enemy.Name + " těžký úder a zbývá mu " + enemy.Hp);
+                        AnsiConsole.Write(new Markup("[green]Zasadil jsi nepříteli[/] " + enemy.Name + " [green]těžký úder[/] "));
                         Console.ReadLine();
                         if (enemy.Hp > 0)
                         {
@@ -362,7 +362,8 @@ namespace RPG_OOP
 
                     if (comba == "Pokus o útěk" && utek == false && player.Hp > 0)
                     {
-                        Console.WriteLine("O útěk jsi se již pokusil a nevyšlo to");
+                        AnsiConsole.Write(new Markup("[red]O útěk jsi se již pokusil a nevyšlo to[/]"));
+                        Console.ReadLine();
 
                     }
 
@@ -377,13 +378,15 @@ namespace RPG_OOP
                         if (sance == true)
                         {
                             Console.WriteLine("-------------------");
-                            Console.WriteLine("Povedlo se ti utéct");
+                            AnsiConsole.Write(new Markup("[green]Povedlo se ti utéct[/]"));
+                            Console.ReadLine() ;
                             enemy.Hp = 0;
                         }
                         if (sance == false)
                         {
                             Console.WriteLine("---------------------");
-                            Console.WriteLine("Nepovedlo se ti utéct");
+                            AnsiConsole.Write(new Markup("[red]Nepovedlo se ti utéct[/]"));
+                            Console.ReadLine();
                             utek = false;
                         }
 
@@ -397,7 +400,7 @@ namespace RPG_OOP
 
                     int result2 = player.Hp - enemy.Dmg;
                     player.Hp = result2;
-                    Console.WriteLine("Nepřítel " + enemy.Name + " ti udělil " + enemy.Dmg + " poškození a zbívá ti " + player.Hp + " životů.");
+                    AnsiConsole.Write(new Markup("[red]Nepřítel[/] " + enemy.Name + " [red]ti udělil[/] " + enemy.Dmg + " [red]poškození[/]"));
                     Console.ReadLine();
 
                 }
