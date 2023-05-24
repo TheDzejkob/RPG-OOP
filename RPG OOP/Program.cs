@@ -48,7 +48,7 @@ namespace RPG_OOP
 
                 // Asynchronous
                 AnsiConsole.Status()
-                    .StartAsync("Loading...", async ctx =>
+                    .StartAsync("Načítání...", async ctx =>
                     {
                         Thread.Sleep(2000);
                     });
