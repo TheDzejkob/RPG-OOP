@@ -145,6 +145,7 @@ namespace RPG_OOP
                         //Console.WriteLine("Coiny: " + player.Coiny);
 
                         //Console.ReadLine();
+
                         
 
                     }
