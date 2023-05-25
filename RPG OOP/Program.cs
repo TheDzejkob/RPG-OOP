@@ -163,19 +163,40 @@ namespace RPG_OOP
 
                     void inventory()
                     {
+                        //if (player.Items.Count == 0)
+                        //{
+                        //    Console.WriteLine("Tvůj inventář: " + "Tvůj Inventář je prázdný");
+                        //}
+                        //else
+                        //{
+                        //    Console.WriteLine("-Tvůj inventář-");
+                        //    Console.WriteLine("       ↓      ");
+                        //    for (int i = 0; i < player.Items.Count; i++)
+                        //    {
+                        //        Console.WriteLine(player.Items[i].Name);
+                        //    }
+                        //}
                         if (player.Items.Count == 0)
                         {
-                            Console.WriteLine("Tvůj inventář: " + "Tvůj Inventář je prázdný");
+                            var panel = new Panel("Tvůj inventář je prázdný");
+                            panel.Header = new PanelHeader("Inventář");
+                            panel.Border = BoxBorder.Rounded;
+                            panel.HeaderAlignment(Justify.Center);
+                            AnsiConsole.Write(panel);
                         }
                         else
-                        {
-                            Console.WriteLine("-Tvůj inventář-");
-                            Console.WriteLine("       ↓      ");
+
                             for (int i = 0; i < player.Items.Count; i++)
-                            {
-                                Console.WriteLine(player.Items[i].Name);
-                            }
+                        {
+
+                            var panel = new Panel(player.Items[i].Name);
+                            panel.Header = new PanelHeader("Inventář");
+                            panel.Border = BoxBorder.Rounded;
+                            panel.HeaderAlignment(Justify.Center);
+                            AnsiConsole.Write(panel);
+
                         }
+
 
                         Console.ReadLine();
                     }
