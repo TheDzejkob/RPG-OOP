@@ -192,7 +192,7 @@ namespace RPG_OOP
             void krok()
             {
 
-                string filePath = "C:\\Users\\PCnetz\\Desktop\\PRG\\RPG-OOP\\RPG OOP\\negr.txt";
+                string filePath = "C:\\Users\\axolo\\Source\\Repos\\TheDzejkob\\RPG-OOP\\RPG OOP\\negr.txt";
 
 
 
