@@ -145,8 +145,19 @@ namespace RPG_OOP
                         //Console.WriteLine("Coiny: " + player.Coiny);
 
                         //Console.ReadLine();
+                        var table = new Table();
+                        table.AddColumn("Stat");
+                        table.AddColumn("Hodnota");
+                        table.AddRow("Jméno", ": " + player.Name);
+                        table.AddRow("Životy", ": " + player.Hp);
+                        table.AddRow("Kroky", ": " + player.Stepcounter);
+                        table.AddRow("Coiny", ": " + player.Stepcounter);
+                        table.Title("[bold orange1]Staty[/]");
+                        table.Border = TableBorder.AsciiDoubleHead;
+                        table.BorderColor(Color.Orange1);
+                        table.Centered();
+                        AnsiConsole.Write(table);
 
-                        
 
                     }
 
