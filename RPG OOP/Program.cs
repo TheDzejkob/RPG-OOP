@@ -179,9 +179,8 @@ namespace RPG_OOP
                         if (player.Items.Count == 0)
                         {
                             var panel = new Panel("Tvůj inventář je prázdný");
-                            panel.Header = new PanelHeader("[bold orange1]Inventář[/]");
+                            panel.Header = new PanelHeader("Inventář");
                             panel.Border = BoxBorder.Rounded;
-                            panel.BorderColor(Color.Orange1);
                             panel.HeaderAlignment(Justify.Center);
                             AnsiConsole.Write(panel);
                         }
@@ -191,9 +190,12 @@ namespace RPG_OOP
                         {
 
                             var panel = new Panel(player.Items[i].Name);
-                            panel.Header = new PanelHeader("[bold orange1]Inventář[/]");
+                            panel.Header = new PanelHeader("Inventář");
                             panel.Border = BoxBorder.Rounded;
+<<<<<<< HEAD
                                 panel.BorderColor(Color.Orange1);
+=======
+>>>>>>> parent of d7e1e3c (inv)
                             panel.HeaderAlignment(Justify.Center);
                             AnsiConsole.Write(panel);
 
