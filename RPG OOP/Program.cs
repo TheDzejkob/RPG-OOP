@@ -195,9 +195,24 @@ namespace RPG_OOP
                         table.AddColumn(new TableColumn("Materiály").Centered());
 
                         table.AddRow("Sekyrka", "Topůrko \n Čepel");
-                        table.AddRow("Sekyrka", "Topůrko \n Čepel");
 
                         AnsiConsole.Write(table);
+                        var overeni = AnsiConsole.Prompt(
+                            new SelectionPrompt<string>()
+                            .Title("Jaký předmět si přeješ vyrobit")
+                            .PageSize(3)
+                            .AddChoices(new[] {
+                            "Sekyru", "Nic(Odejít)",
+                                               }));
+                        if (overeni == "Sekyru")
+                        {
+
+                            AnsiConsole.Write();
+                        }
+                        else
+                        {
+                            AnsiConsole.Write();
+                        }
 
                     }
 
