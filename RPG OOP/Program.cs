@@ -124,7 +124,7 @@ namespace RPG_OOP
                        .Title("[green]MENU[/]")
                        .PageSize(6)
                        .AddChoices(new[] {
-                        "Staty", "Inventář","Bestiář (Work in progress)","Crafting (Work in progress)",
+                        "Staty", "Inventář","Bestiář (Work in progress)","Crafting",
                        }));
                         if (overeni == "Staty")
                         { 
@@ -134,24 +134,20 @@ namespace RPG_OOP
                         { 
                             inventory(); 
                         }
+                        if (overeni == "Crafting")
+                        {
+                            craft();
+                        }
                     }
                     void staty() {
-                        //Console.Clear();
-                        //Console.WriteLine("Tvá postava");
-                        //Console.WriteLine("-----------");
-                        //Console.WriteLine("Jméno: " + player.Name);
-                        //Console.WriteLine("Životy: " + player.Hp);
-                        //Console.WriteLine("Počet kroků: " + player.Stepcounter);
-                        //Console.WriteLine("Coiny: " + player.Coiny);
 
-                        //Console.ReadLine();
                         var table = new Table();
                         table.AddColumn("Stat");
                         table.AddColumn("Hodnota");
                         table.AddRow("Jméno", ": " + player.Name);
                         table.AddRow("Životy", ": " + player.Hp);
                         table.AddRow("Kroky", ": " + player.Stepcounter);
-                        table.AddRow("Coiny", ": " + player.Stepcounter);
+                        table.AddRow("Coiny", ": " + player.Coiny);
                         table.Title("[bold orange1]Staty[/]");
                         table.Border = TableBorder.AsciiDoubleHead;
                         table.BorderColor(Color.Orange1);
@@ -163,19 +159,7 @@ namespace RPG_OOP
 
                     void inventory()
                     {
-                        //if (player.Items.Count == 0)
-                        //{
-                        //    Console.WriteLine("Tvůj inventář: " + "Tvůj Inventář je prázdný");
-                        //}
-                        //else
-                        //{
-                        //    Console.WriteLine("-Tvůj inventář-");
-                        //    Console.WriteLine("       ↓      ");
-                        //    for (int i = 0; i < player.Items.Count; i++)
-                        //    {
-                        //        Console.WriteLine(player.Items[i].Name);
-                        //    }
-                        //}
+
                         if (player.Items.Count == 0)
                         {
                             var panel = new Panel("Tvůj inventář je prázdný");
@@ -201,6 +185,20 @@ namespace RPG_OOP
 
 
                         Console.ReadLine();
+                    }
+
+                    void craft()
+                    {
+
+                        var table = new Table();
+                        table.AddColumn(new TableColumn("Item").Centered());
+                        table.AddColumn(new TableColumn("Materiály").Centered());
+
+                        table.AddRow("Sekyrka", "Topůrko \n Čepel");
+                        table.AddRow("Sekyrka", "Topůrko \n Čepel");
+
+                        AnsiConsole.Write(table);
+
                     }
 
 
