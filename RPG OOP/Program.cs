@@ -207,11 +207,11 @@ namespace RPG_OOP
                         if (overeni == "Sekyru")
                         {
 
-                            AnsiConsole.Write();
+                            AnsiConsole.Write("");
                         }
                         else
                         {
-                            AnsiConsole.Write();
+                            AnsiConsole.Write("");
                         }
 
                     }
@@ -240,7 +240,7 @@ namespace RPG_OOP
             void krok()
             {
 
-                string filePath = "C:\\Users\\PCnetz\\Source\\Repos\\TheDzejkob\\RPG-OOP\\RPG OOP\\negr.txt";
+                string filePath = "D:\\rpg\\RPG-OOP\\RPG OOP\\negr.txt";
 
 
 

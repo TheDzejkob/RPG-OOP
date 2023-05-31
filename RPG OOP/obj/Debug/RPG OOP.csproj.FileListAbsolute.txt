@@ -79,3 +79,22 @@ C:\Users\PCnetz\Source\Repos\TheDzejkob\RPG-OOP\RPG OOP\obj\Debug\RPG OOP.csproj
 C:\Users\PCnetz\Source\Repos\TheDzejkob\RPG-OOP\RPG OOP\obj\Debug\RPG OOP.csproj.CopyComplete
 C:\Users\PCnetz\Source\Repos\TheDzejkob\RPG-OOP\RPG OOP\obj\Debug\RPG OOP.exe
 C:\Users\PCnetz\Source\Repos\TheDzejkob\RPG-OOP\RPG OOP\obj\Debug\RPG OOP.pdb
+D:\rpg\RPG-OOP\RPG OOP\obj\Debug\RPG OOP.csproj.AssemblyReference.cache
+D:\rpg\RPG-OOP\RPG OOP\obj\Debug\RPG OOP.csproj.SuggestedBindingRedirects.cache
+D:\rpg\RPG-OOP\RPG OOP\obj\Debug\RPG OOP.csproj.CoreCompileInputs.cache
+D:\rpg\RPG-OOP\RPG OOP\obj\Debug\RPG OOP.exe
+D:\rpg\RPG-OOP\RPG OOP\obj\Debug\RPG OOP.pdb
+D:\rpg\RPG-OOP\RPG OOP\bin\Debug\RPG OOP.exe.config
+D:\rpg\RPG-OOP\RPG OOP\bin\Debug\RPG OOP.exe
+D:\rpg\RPG-OOP\RPG OOP\bin\Debug\RPG OOP.pdb
+D:\rpg\RPG-OOP\RPG OOP\bin\Debug\Spectre.Console.dll
+D:\rpg\RPG-OOP\RPG OOP\bin\Debug\System.Buffers.dll
+D:\rpg\RPG-OOP\RPG OOP\bin\Debug\System.Memory.dll
+D:\rpg\RPG-OOP\RPG OOP\bin\Debug\System.Numerics.Vectors.dll
+D:\rpg\RPG-OOP\RPG OOP\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\rpg\RPG-OOP\RPG OOP\bin\Debug\Spectre.Console.xml
+D:\rpg\RPG-OOP\RPG OOP\bin\Debug\System.Buffers.xml
+D:\rpg\RPG-OOP\RPG OOP\bin\Debug\System.Memory.xml
+D:\rpg\RPG-OOP\RPG OOP\bin\Debug\System.Numerics.Vectors.xml
+D:\rpg\RPG-OOP\RPG OOP\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\rpg\RPG-OOP\RPG OOP\obj\Debug\RPG OOP.csproj.CopyComplete
