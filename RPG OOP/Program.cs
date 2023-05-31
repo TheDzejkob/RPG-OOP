@@ -204,14 +204,39 @@ namespace RPG_OOP
                             .AddChoices(new[] {
                             "Sekyru", "Nic(Odejít)",
                                                }));
+
+
                         if (overeni == "Sekyru")
                         {
+                            if (player.Items.Contains(cepel && topurko))
+                            { 
+                                AnsiConsole.Status()
+                                .Start("Vyrábíš sekyru", ctx =>
+                                {
+                                    AnsiConsole.MarkupLine("[gray]Opracovávání topůrka[/]");
+                                    Thread.Sleep(1000);
 
-                            AnsiConsole.Write("");
+                                
+                                    ctx.Status("Opracovávání topůrka");
+                                    ctx.Spinner(Spinner.Known.Star);
+                                    ctx.SpinnerStyle(Style.Parse("green"));
+
+                                
+                                    AnsiConsole.MarkupLine("[gray]Nasouvání čepele[/]");
+                                    Thread.Sleep(2000);
+                                    });
+                                    AnsiConsole.Write(new Markup("[green]Vycraftil jsi Sekyru[/]"));
+                            }
+                            else
+                            {
+                            AnsiConsole.Write(new Markup("[red]Nemáš potřebné materiály[/]"));
+                            }
+
                         }
+
                         else
                         {
-                            AnsiConsole.Write("");
+
                         }
 
                     }
@@ -240,7 +265,7 @@ namespace RPG_OOP
             void krok()
             {
 
-                string filePath = "D:\\rpg\\RPG-OOP\\RPG OOP\\negr.txt";
+                string filePath = "F:\\rpg\\RPG-OOP\\RPG OOP\\negr.txt";
 
 
 
@@ -348,6 +373,7 @@ namespace RPG_OOP
                     //Jsou 4h rano a mam v sobe 4ty kafe, miluju svuj zivot xD
                     // progress solidní ale kofein levels furt stejný
                     // dalsi progress dalsi koment :D 
+                    // more like dalsi dalsi tejden dalsi content
                 }
 
 
