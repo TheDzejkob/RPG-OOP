@@ -122,6 +122,12 @@ namespace RPG_OOP
                     {
                        menu();
                     }
+                if (input == "")
+                    {}
+                else
+                    {
+                        AnsiConsole.Write(new Markup("[red]Neplatný příkaz[/]"));
+                    }
                     void menu() 
                     {
                         var overeni = AnsiConsole.Prompt(
