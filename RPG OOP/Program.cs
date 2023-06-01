@@ -18,6 +18,11 @@ namespace RPG_OOP
 
         static void Main(string[] args)
         {
+            //itemy
+            Item topurko = new Item("Topůrko", 0, 0, true, 4, 0);
+            Item cepel = new Item("Čepel sekery", 0, 0, true, 2, 0);
+            Item obvaz = new Item("Obvaz", 0, 0, false, 0, 10);
+
 
 
             bool comb = false;
@@ -171,9 +176,10 @@ namespace RPG_OOP
                         }
                         else
 
+
                             for (int i = 0; i < player.Items.Count; i++)
                         {
-
+                            
                             var panel = new Panel(player.Items[i].Name);
                             panel.Header = new PanelHeader("[bold orange1]Inventář[/]");
                             panel.Border = BoxBorder.Rounded;
@@ -190,25 +196,25 @@ namespace RPG_OOP
                     void craft()
                     {
 
-                        //var table = new Table();
-                        //table.AddColumn(new TableColumn("Item").Centered());
-                        //table.AddColumn(new TableColumn("Materiály").Centered());
+                        var table = new Table();
+                        table.AddColumn(new TableColumn("Item").Centered());
+                        table.AddColumn(new TableColumn("Materiály").Centered());
 
-                        //table.AddRow("Sekyrka", "Topůrko \n Čepel");
+                        table.AddRow("Sekyrka", "Topůrko \n Čepel");
 
-                        //AnsiConsole.Write(table);
-                        //var overeni = AnsiConsole.Prompt(
-                        //    new SelectionPrompt<string>()
-                        //    .Title("Jaký předmět si přeješ vyrobit")
-                        //    .PageSize(3)
-                        //    .AddChoices(new[] {
-                        //    "Sekyru", "Nic(Odejít)",
-                        //                       }));
+                        AnsiConsole.Write(table);
+                        var overeni = AnsiConsole.Prompt(
+                            new SelectionPrompt<string>()
+                            .Title("Jaký předmět si přeješ vyrobit")
+                            .PageSize(3)
+                            .AddChoices(new[] {
+                            "Sekyru", "Nic(Odejít)",
+                                               }));
 
 
                         if (overeni == "Sekyru")
                         {
-                            if (player.Items.Contains(cepel && topurko))
+                            if (player.Items.Contains(cepel) && player.Items.Contains(topurko))
                             { 
                                 AnsiConsole.Status()
                                 .Start("Vyrábíš sekyru", ctx =>
@@ -518,7 +524,7 @@ namespace RPG_OOP
 
                     if (tradeRoz == "Zakoupit topůrko" && player.Coiny >= 5)
                     {
-                        Item topurko = new Item("Topůrko", 0, 0, true, 4, 0);
+                        
                         player.Items.Add(topurko);
                         Console.WriteLine("Zakoupil jsi topůrko za 5 coinů, bylo ti přidáno do Inventáře");
 
@@ -532,7 +538,6 @@ namespace RPG_OOP
 
                     if (tradeRoz == "Zakoupit čepel" && player.Coiny >= 3)
                     {
-                        Item cepel = new Item("Čepel sekery", 0, 0, true, 2, 0);
                         player.Items.Add(cepel);
                         Console.WriteLine("Zakoupil jsi čepel sekery za 3 coiny, byla ti přidáno do Inventáře");
 
@@ -545,7 +550,6 @@ namespace RPG_OOP
 
                     if (tradeRoz == "Zakoupit obvaz" && player.Coiny >= 10)
                     {
-                        Item obvaz = new Item("Obvaz", 0, 0, false, 0, 10);
                         player.Items.Add(obvaz);
                         Console.WriteLine("Zakoupil jsi obvaz za 10 Coinů, byl ti přidán do Inventáře ");
 
