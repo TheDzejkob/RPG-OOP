@@ -23,6 +23,8 @@ namespace RPG_OOP
             Item cepel = new Item("Čepel sekery", 0, 0, true, 2, 0);
             Item obvaz = new Item("Obvaz", 0, 0, false, 0, 10);
 
+            Item drevo = new Item("Dřevo", 0, 0, true, 3, 0);
+
 
 
             bool comb = false;
@@ -277,7 +279,7 @@ namespace RPG_OOP
             void krok()
             {
 
-                string filePath = "F:\\rpg\\RPG-OOP\\RPG OOP\\negr.txt";
+                string filePath = "C:\\Users\\PCnetz\\Source\\Repos\\TheDzejkob\\RPG-OOP\\RPG OOP\\negr.txt";
 
 
 
@@ -386,6 +388,34 @@ namespace RPG_OOP
                     // progress solidní ale kofein levels furt stejný
                     // dalsi progress dalsi koment :D 
                     // more like dalsi dalsi tejden dalsi content
+                }
+
+                else if (iD == 3.01)
+                {
+                    var kaceni = AnsiConsole.Prompt(
+                    new SelectionPrompt<string>()
+                    .Title("[underline yellow]Vyber akci kterou provedeš[/]")
+                    .PageSize(4)
+                    .AddChoices(new[] {
+                        "Pokácet strom", "Pokračovat v cestě",
+                    }));
+                    if (kaceni == "Pokácet strom")
+                    {
+                        AnsiConsole.Status()
+                        .Start("Kácíš strom", ctx =>
+                        {
+
+                            Thread.Sleep(1000);
+
+                            // Update the status and spinner
+                            ctx.Status("Kácení");
+                            ctx.Spinner(Spinner.Known.Star);
+                            ctx.SpinnerStyle(Style.Parse("green"));
+                        });
+                        AnsiConsole.Write(new Markup("[green]Pokácel jsi strom do inventáře ti bylo přidáno dřevo[/]"));
+                        player.Items.Add(drevo);
+                    }
+
                 }
 
 

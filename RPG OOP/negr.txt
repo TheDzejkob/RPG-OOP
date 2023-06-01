@@ -13,7 +13,9 @@
 0,00;Pribeh placeholder 11
 0,00;Pribeh placeholder 12
 0,00;Pribeh placeholder 13
+3,01;Našel jsi Strom který můžeš pokácet
 0,00;Pribeh placeholder 14
 0,00;Pribeh placeholder 15
 0,00;Pribeh placeholder 16
 2,00;Potkaj jsi dalšího dobrodruha chce s tebou obchodovat
+3,01;Našel jsi Strom který můžeš pokácet
